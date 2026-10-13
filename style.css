@@ -1,0 +1,30 @@
+:root{--bg:#1a0b1f;--text:#fff4e0;--muted:#e3c3d3;--gold:#f5b335;--pink:#d1357f;color-scheme:dark}
+*{box-sizing:border-box}
+html,body{margin:0;min-height:100%}
+body{background:radial-gradient(circle at 50% 0,#5a1a5e 0,var(--bg) 60%) fixed;color:var(--text);font-family:system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;text-align:center;overflow-x:hidden}
+.lights{position:fixed;top:0;left:0;right:0;height:10px;background:repeating-linear-gradient(90deg,var(--gold) 0 6px,transparent 6px 28px);animation:tw 1.4s infinite alternate}
+@keyframes tw{to{opacity:.3}}
+.screen{max-width:520px;margin:0 auto;padding:40px 18px;min-height:100vh;display:flex;flex-direction:column;align-items:center;justify-content:center}
+.tag{background:var(--gold);color:#2a1233;font-weight:800;padding:6px 14px;border-radius:6px;transform:rotate(-2deg);margin-bottom:14px}
+h1{font-size:2rem;line-height:1.2;margin:8px 0;color:var(--gold)}
+h1 span{color:#fff}
+p{color:var(--muted);margin:6px 0;font-size:1.05rem}
+.emoji{font-size:5rem;animation:bob 1.6s ease-in-out infinite}
+@keyframes bob{50%{transform:translateY(-10px) rotate(6deg)}}
+.row{display:flex;gap:18px;align-items:center;justify-content:center;margin-top:30px;min-height:120px;flex-wrap:wrap}
+button,.go{font:inherit;font-weight:800;border:0;border-radius:14px;cursor:pointer;text-decoration:none}
+#yes{background:linear-gradient(90deg,var(--gold),var(--pink));color:#1a0b1f;padding:14px 34px;font-size:1.2rem;transition:transform .3s}
+#no{background:#3b2145;color:#fff;padding:12px 26px;font-size:1rem;border:1px solid #5d3a69;transition:transform .3s,left .2s,top .2s}
+#no.fly{position:fixed;z-index:5}
+.msg{min-height:1.5em;margin-top:14px;color:var(--gold);font-weight:600}
+.gallery{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;width:100%;margin:18px 0}
+.ph{aspect-ratio:3/4;border-radius:14px;background:linear-gradient(135deg,var(--pink),var(--gold));display:flex;align-items:center;justify-content:center;font-size:2.2rem;overflow:hidden;border:2px solid #fff3;transform:rotate(var(--r,0deg))}
+.ph img{width:100%;height:100%;object-fit:cover}
+.box{background:#2a1233;border:1px solid #4a2455;border-radius:16px;padding:16px;width:100%;margin:8px 0}
+.go{display:inline-block;margin-top:14px;background:#25d366;color:#06310f;padding:14px 26px}
+canvas{position:fixed;inset:0;pointer-events:none;z-index:9}
+.fl{position:fixed;bottom:-40px;font-size:1.6rem;animation:up linear forwards;pointer-events:none;z-index:1}
+@keyframes up{to{transform:translateY(-110vh) rotate(40deg);opacity:0}}
+.shake{animation:sh .25s infinite}
+@keyframes sh{25%{transform:translate(4px,-3px)}50%{transform:translate(-4px,3px)}75%{transform:translate(3px,4px)}}
+body.chaos{overflow:hidden}
